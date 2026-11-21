@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrucoCole</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <h1>Truco<span>Cole</span></h1>
+    </header>
+
+    <main>
+      <!-- Función 1: anotador -->
+      <section class="panel" id="p-anotador" aria-labelledby="h-anotador">
+        <h2 id="h-anotador">Anotador</h2>
+        <p class="muted">Click izquierdo suma, click derecho resta. En el celular, tocá para sumar y usá −1 para restar.</p>
+
+        <div class="controls">
+          <div class="seg" role="group" aria-label="Puntos de la partida">
+            <button type="button" id="to15" aria-pressed="false">A 15</button>
+            <button type="button" id="to30" aria-pressed="true">A 30</button>
+          </div>
+          <div class="row">
+            <button type="button" class="btn" id="undo">Deshacer</button>
+            <button type="button" class="btn" id="reset">Nueva partida</button>
+          </div>
+        </div>
+
+        <div id="winner" class="win" role="status" hidden></div>
+
+        <div class="teams" id="teams"></div>
+      </section>
+
+      <!-- Función 2: historial -->
+      <section class="panel" id="p-historial" aria-labelledby="h-historial" hidden>
+        <h2 id="h-historial">Historial</h2>
+        <p class="muted">Las partidas que guardaste, de la más nueva a la más vieja.</p>
+        <ul class="plain" id="games"></ul>
+      </section>
+
+      <!-- Función 3: ranking -->
+      <section class="panel" id="p-ranking" aria-labelledby="h-ranking" hidden>
+        <h2 id="h-ranking">Ranking del recreo</h2>
+        <p class="muted">Se arma solo con los nombres de las parejas. Escribilos separados por "y", por ejemplo Santi y Mati.</p>
+        <div id="ranking"></div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="nav" aria-label="Secciones">
+    <div class="nav-in">
+      <a class="nav-i" href="#anotador" data-tab="anotador">Anotador</a>
+      <a class="nav-i" href="#historial" data-tab="historial">Historial</a>
+      <a class="nav-i" href="#ranking" data-tab="ranking">Ranking</a>
+    </div>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
